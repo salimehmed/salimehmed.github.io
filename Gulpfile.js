@@ -12,7 +12,8 @@ gulp.task("default", ["sass"]);
 // Live reload anytime a file changes
 gulp.task("watch", ["browserSync", "sass"], function() {
 	gulp.watch("src/scss/**/*.scss", ["sass"]);
-	gulp.watch("dist/*.html").on("change", browserSync.reload);
+	gulp.watch("./*.html").on("change", browserSync.reload);
+	gulp.watch("js/*.js").on("change", browserSync.reload);
 });
 
 // Spin up a server

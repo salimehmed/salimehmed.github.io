@@ -19,7 +19,7 @@ gulp.task("watch", ["browserSync", "sass"], function() {
 gulp.task("browserSync", function() {
 	browserSync({
 		server: {
-			baseDir: "dist"
+			baseDir: "."
 		}
 	})
 });
@@ -31,7 +31,7 @@ gulp.task("sass", function() {
 				includePaths: bourbon,
 				includePaths: neat
 			}))
-			.pipe(gulp.dest("dist/css"))
+			.pipe(gulp.dest("./css"))
 			.pipe(browserSync.reload({
 				stream: true
 			}))
